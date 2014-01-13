@@ -6,7 +6,6 @@ class Timer(object):
         self.counter = counter
         self.fischer = fischer
         self.time = None
-        print 'init timer'
 
     def get_counter(self):
         if (self.time == None): return self.counter
