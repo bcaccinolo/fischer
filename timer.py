@@ -5,7 +5,8 @@ class Timer(object):
     def __init__(self, counter = 20, fischer = 0):
         self.counter = counter
         self.fischer = fischer
-        self.time = time.time()
+        self.time = None
+        print 'init timer'
 
     def get_counter(self):
         if (self.time == None): return self.counter

@@ -8,7 +8,7 @@ class TestTimer(unittest.TestCase):
     def test_init(self):
         timer = Timer()
         time.sleep(5)
-        self.assertEqual(timer.get_counter(),15)
+        self.assertEqual(timer.get_counter(),20)
 
     # no fischer amount
     def test_stop(self):
@@ -22,8 +22,12 @@ class TestTimer(unittest.TestCase):
 
     def test_get_counter(self):
         timer = Timer()
+        timer.start()
+        print timer.get_counter()
         time.sleep(5)
+        print timer.get_counter()
         timer.stop()
+        print timer.get_counter()
         self.assertEqual(timer.get_counter(), 15)
 
     # with fischer amount
