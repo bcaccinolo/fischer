@@ -2,8 +2,9 @@ import time
 
 class Timer(object):
 
-    def __init__(self):
-        self.counter = 20
+    def __init__(self, counter = 20, fisher = 0):
+        self.counter = counter
+        self.fischer = fischer
         self.time = time.time()
 
     def get_counter(self):
@@ -20,32 +21,5 @@ class Timer(object):
 
     def stop(self):
         self.counter = self.get_counter()
-
-
-### UNIT TESTS ###############################################
-
-import unittest
-import time
-
-class TestTimer(unittest.TestCase):
-
-    def test_init(self):
-        timer = Timer()
-        time.sleep(5)
-        self.assertEqual(timer.get_counter(),15)
-
-    def test_stop(self):
-        timer = Timer()
-        time.sleep(5)
-        timer.stop()
-        time.sleep(3)
-        timer.start()
-        time.sleep(5)
-        self.assertEqual(timer.get_counter(),10)
-
-
-
-if __name__== '__main__':
-    unittest.main()
 
 
