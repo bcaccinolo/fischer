@@ -50,13 +50,3 @@ class TestGameClock(unittest.TestCase):
         clock.next()
         self.assertEqual(clock.get_counters(), [37, 35])
 
-
-
-
-
-
-
-
-
-
-

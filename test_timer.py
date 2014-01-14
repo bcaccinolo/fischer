@@ -48,5 +48,12 @@ class TestTimer(unittest.TestCase):
         timer.start_stop()
         self.assertEqual(timer.time, None)
 
+    def test_get_formatted_counter(self):
+        clock = Timer(1116)
+        self.assertEqual(clock.get_formatted_counter(), '18:36')
+
+        clock = Timer(2)
+        self.assertEqual(clock.get_formatted_counter(), '00:02')
+
 
 
