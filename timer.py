@@ -24,6 +24,10 @@ class Timer(object):
         self.counter = self.get_counter() + self.fischer
         self.time = None
 
+    def interrupt(self):
+        self.counter = self.get_counter()
+        self.time = None
+
     # start it if stopped
     # stop it if started
     def start_stop(self):
@@ -31,4 +35,5 @@ class Timer(object):
             self.start()
         else:
             self.stop()
+
 
