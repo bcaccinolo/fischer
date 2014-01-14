@@ -21,13 +21,19 @@ class Fischer(object):
             time.sleep(0.2)
 
             counters = clock.get_counters()
-            str = "\rtimer1: {} - timer2: {}   ".format(counters[0], counters[1])
-            self.win.addstr(str)
+            if counters[2] == 1:
+                marker1 = '>'
+                marker2 = ' '
+            else:
+                marker1 = ' '
+                marker2 = '>'
+            str = " {} timer1: {} - {} timer2: {}   ".format(marker1, counters[0],
+                                                           marker2, counters[1])
+            self.win.addstr(5, 5, str)
 
             ch = self.win.getch()
             if(ch == 32): clock.next()
 
 if __name__ == '__main__':
     Fischer.start()
-
 

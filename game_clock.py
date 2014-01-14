@@ -24,7 +24,22 @@ class GameClock(object):
         self.timer2.interrupt()
 
     def get_counters(self):
-        return [ self.timer1.get_counter(), self.timer2.get_counter() ]
+        return [ self.timer1.get_counter(),
+                 self.timer2.get_counter(),
+                 self.turn_id() ]
+
+    def turn_id(self):
+        if self.timer1.time == None:
+            if self.timer2.time == None:
+                return 1
+            else:
+                return 2
+        else:
+            if self.timer2.time == None:
+                return 1
+
+        raise Warning('The 2 timers are started at the same time')
+
 
 
 
