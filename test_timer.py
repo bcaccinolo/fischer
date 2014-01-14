@@ -35,4 +35,12 @@ class TestTimer(unittest.TestCase):
         timer.stop()
         self.assertEqual(timer.get_counter(), 35)
 
+    def test_start_stop(self):
+        timer = Timer()
+        timer.start_stop()
+        self.assertNotEqual(timer.time, None)
+        timer.start_stop()
+        self.assertEqual(timer.time, None)
+
+
 

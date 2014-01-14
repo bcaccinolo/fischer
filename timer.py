@@ -24,3 +24,11 @@ class Timer(object):
         self.counter = self.get_counter() + self.fischer
         self.time = None
 
+    # start it if stopped
+    # stop it if started
+    def start_stop(self):
+        if (self.time == None):
+            self.start()
+        else:
+            self.stop()
+
