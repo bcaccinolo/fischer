@@ -1,6 +1,5 @@
 from __future__ import print_function
 import time
-import sys
 import curses
 
 from game_clock import GameClock
@@ -23,9 +22,7 @@ class Fischer(object):
 
             counters = clock.get_counters()
             str = "\rtimer1: {} - timer2: {}   ".format(counters[0], counters[1])
-
-            sys.stdout.write(str)
-            sys.stdout.flush()
+            self.win.addstr(str)
 
             ch = self.win.getch()
             if(ch == 32): clock.next()
