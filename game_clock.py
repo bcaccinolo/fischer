@@ -24,8 +24,8 @@ class GameClock(object):
         self.timer2.interrupt()
 
     def get_counters(self):
-        return [ self.timer1.get_counter(),
-                 self.timer2.get_counter(),
+        return [ self.timer1.get_formatted_counter(),
+                 self.timer2.get_formatted_counter(),
                  self.turn_id() ]
 
     def turn_id(self):

@@ -8,13 +8,14 @@ class Fischer(object):
 
     @classmethod
     def curses_init(self):
-        self.win = curses.initscr()
-        curses.noecho()
-        curses.curs_set(0)
-        self.win.nodelay(1)
+        curses.wrapper(self.start)
+        # self.win = curses.initscr()
+        # curses.noecho()
+        # curses.curs_set(0)
+        # self.win.nodelay(1)
 
     @classmethod
-    def start(self):
+    def start(self, win):
         self.curses_init()
         clock = GameClock()
         while True:
@@ -29,11 +30,11 @@ class Fischer(object):
                 marker2 = '>'
             str = " {} timer1: {} - {} timer2: {}   ".format(marker1, counters[0],
                                                            marker2, counters[1])
-            self.win.addstr(5, 5, str)
+            win.addstr(5, 5, str)
 
-            ch = self.win.getch()
+            ch = win.getch()
             if(ch == 32): clock.next()
 
 if __name__ == '__main__':
-    Fischer.start()
+    Fischer.curses_init()
 
