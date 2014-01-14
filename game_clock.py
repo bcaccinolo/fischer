@@ -13,8 +13,11 @@ class GameClock(object):
         self.timer1.start()
 
     def next(self):
-        self.timer1.start_stop()
-        self.timer2.start_stop()
+        if(self.timer1.time == self.timer2.time == None):
+            self.timer1.start()
+        else:
+            self.timer1.start_stop()
+            self.timer2.start_stop()
 
     def interrupt(self):
         self.timer1.interrupt()
