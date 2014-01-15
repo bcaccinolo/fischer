@@ -10,7 +10,10 @@ class Fischer(object):
 
     def __init__(self):
         self.clock = GameClock()
-        curses.wrapper(self.start)
+        try:
+            curses.wrapper(self.start)
+        except KeyboardInterrupt:
+            print("See you soon!")
 
     def start(self, win):
         self.win = win
