@@ -7,11 +7,12 @@ OK - clean the exit on Ctrl-C
 
 - command line style
 
-= Launch tests
+## Launch tests
 
+```
   python -m unittest test_game_clock
   python -m unittest test_timer
-
+```
 
 
 
